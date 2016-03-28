@@ -1,0 +1,11 @@
+@import "susy";
+
+$susy:(
+    columns: 8,
+    container: 1140px,
+    debug: (image: show)
+);
+
+.container {
+    @include container();
+}

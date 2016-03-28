@@ -1,0 +1,15 @@
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%);
+  background-size: 12.82051%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top; }
+  .container:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/*# sourceMappingURL=style.css.map */
