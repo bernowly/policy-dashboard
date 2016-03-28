@@ -5,16 +5,28 @@
         <title>Document</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
-        <div id="messages">
+    <body class="container">
+        <div id="messages" class="home">
+		ccc
         </div>
+
+	<div class="auto">
+		bbb
+	</div>
+
+	<div class="life">
+		aaa
+	</div> 
     </body>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script>
         var socket = io();
         socket.on('msg', function(msg) {
-            $('#messages').append($('<li>').text(msg));
+            $('#messages').append($('<li>').text(JSON.stringify(msg)));
         });
     </script>
+    <script src="bower_components/vue/dist/vue.min.js"></script>
+    <script src="js/main.js"></script>
 </html>
+

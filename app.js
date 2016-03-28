@@ -1,7 +1,9 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+app.use(express.static('public'));
 const client = require('redis').createClient();
 
 client.subscribe('pubsub', (err, channel) => {
@@ -15,7 +17,7 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
     client.on("message", (channel, message) => {
         var obj = JSON.parse(message);
-        socket.emit('msg', obj.message);
+        socket.emit('msg', obj);
     });
 });
 

@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%);
-  background-size: 12.82051%;
+  background-size: 17.24138%;
   background-origin: content-box;
   background-clip: content-box;
   background-position: left top; }
@@ -11,5 +11,20 @@
     content: " ";
     display: block;
     clear: both; }
+
+.home {
+  width: 31.03448%;
+  float: left;
+  margin-right: 3.44828%; }
+
+.auto {
+  width: 31.03448%;
+  float: left;
+  margin-right: 3.44828%; }
+
+.life {
+  width: 31.03448%;
+  float: right;
+  margin-right: 0; }
 
 /*# sourceMappingURL=style.css.map */

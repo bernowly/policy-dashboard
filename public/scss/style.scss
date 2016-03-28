@@ -1,11 +1,23 @@
 @import "susy";
 
 $susy:(
-    columns: 8,
+    columns: 6,
     container: 1140px,
     debug: (image: show)
 );
 
 .container {
     @include container();
+}
+
+.home {
+    @include span(2 of 6);
+}
+
+.auto {
+    @include span(2 of 6);
+}
+
+.life {
+    @include span(2 of 6 last);
 }
