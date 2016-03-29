@@ -4,29 +4,41 @@
         <meta charset="UTF-8">
         <title>Document</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css">
     </head>
     <body class="container">
-        <div id="messages" class="home">
-		ccc
-        </div>
-
-	<div class="auto">
-		bbb
-	</div>
-
-	<div class="life">
-		aaa
-	</div> 
+        <ul id="home" class="home collection"></ul>
+        <ul id="auto" class="auto collection"></ul>
+        <ul id="life" class="life collection"></ul>
     </body>
     <script src="/socket.io/socket.io.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script>
-        var socket = io();
-        socket.on('msg', function(msg) {
-            $('#messages').append($('<li>').text(JSON.stringify(msg)));
+        $(document).ready(function() {
+
+            // $('ul.tabs').tabs();
+
+            var socket = io();
+            socket.on('home', function(msg) {
+                $('#home').append(formatMessage(msg));
+            });
+            socket.on('auto', function(msg) {
+                $('#auto').append(formatMessage(msg));
+            });
+            socket.on('life', function(msg) {
+                $('#life').append(formatMessage(msg));
+            });
+
         });
+
+        function formatMessage(msg) {
+            return '<li class="collection-item">' +
+                        '<p>' + msg.cpf + '</p>' +
+                   '</li>';
+        }
+
     </script>
     <script src="bower_components/vue/dist/vue.min.js"></script>
+    <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
 </html>
-

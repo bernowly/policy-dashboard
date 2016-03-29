@@ -17,7 +17,16 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
     client.on("message", (channel, message) => {
         var obj = JSON.parse(message);
-        socket.emit('msg', obj);
+        if (obj.product == 'home') {
+            socket.emit('home', obj);
+        }
+        if (obj.product == 'auto') {
+            socket.emit('auto', obj);
+        }
+        if (obj.product == 'life') {
+            socket.emit('life', obj);
+        }
+
     });
 });
 
