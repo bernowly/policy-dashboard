@@ -6,10 +6,21 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css">
     </head>
-    <body class="container">
-        <ul id="home" class="home collection"></ul>
-        <ul id="auto" class="auto collection"></ul>
-        <ul id="life" class="life collection"></ul>
+    <body>
+        <div class="container">
+            <div class="product_column">
+                <span>Home</span>
+                <ul id="home" class="collection"></ul>
+            </div>
+            <div class="product_column">
+                <span>Auto</span>
+                <ul id="auto" class="collection"></ul>
+            </div>
+            <div class="product_column">
+                <span>Life</span>
+                <ul id="life" class="collection"></ul>
+            </div>
+        </div>
     </body>
     <script src="/socket.io/socket.io.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -29,11 +40,16 @@
                 $('#life').append(formatMessage(msg));
             });
 
+
+            socket.on('clean', function(msg) {
+                $('#' + msg).html('');
+            });
         });
 
         function formatMessage(msg) {
             return '<li class="collection-item">' +
-                        '<p>' + msg.cpf + '</p>' +
+                        '<span>' + msg.id + '</span><br>' +
+                        '<span>' + msg.stage + '</span><br>' +
                    '</li>';
         }
 

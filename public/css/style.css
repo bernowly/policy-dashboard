@@ -12,19 +12,9 @@
     display: block;
     clear: both; }
 
-.home {
-  width: 32.69231%;
+.product_column {
+  width: 23.72881%;
   float: left;
-  margin-right: 0.96154%; }
-
-.auto {
-  width: 32.69231%;
-  float: left;
-  margin-right: 0.96154%; }
-
-.life {
-  width: 32.69231%;
-  float: left;
-  margin-right: 0.96154%; }
+  margin-right: 1.69492%; }
 
 /*# sourceMappingURL=style.css.map */

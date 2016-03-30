@@ -1,7 +1,7 @@
 @import "susy";
 
 $susy:(
-    columns: 21,
+    columns: 12,
     container: 1140px,
     debug: (image: hide)
 );
@@ -12,14 +12,6 @@ $susy:(
     @include container();
 }
 
-.home {
-    @include span(7);
-}
-
-.auto {
-    @include span(7);
-}
-
-.life {
-    @include span(7);
+.product_column {
+    @include span(3);
 }
