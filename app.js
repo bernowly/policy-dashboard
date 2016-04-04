@@ -23,9 +23,10 @@ io.on('connection', (socket) => {
 });
 
 function processProduct(obj, socket) {
+  console.log(obj.id);
   redis.hmset('monit:rec:' + obj.id + '@' + obj.product, obj, (err, resp) => {
       socket.emit('clean', obj.product);
-      redis.expire('monit:rec:' + obj.id + '@' + obj.product, 10, redis.print);
+      redis.expire('monit:rec:' + obj.id + '@' + obj.product, 60 * 5, redis.print);
       redis.keys('monit:rec:*@' + obj.product, (err, data) => {
           data.forEach((key) => {
               redis.hgetall(key, (err, item) => {

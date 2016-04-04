@@ -47,10 +47,15 @@
         });
 
         function formatMessage(msg) {
-            return '<li class="collection-item">' +
-                        '<span>' + msg.id + '</span><br>' +
-                        '<span>' + msg.stage + '</span><br>' +
-                   '</li>';
+            return (msg.elapsed_time != undefined) ?
+                ('<li class="collection-item">' +
+                    '<span>' + msg.id + '</span><br>' +
+                    '<span>' + msg.stage + '</span>&nbsp;:&nbsp;' + msg.elapsed_time + '<br>' +
+                '</li>') :
+                ('<li class="collection-item">' +
+                      '<span>' + msg.id + '</span><br>' +
+                      '<span>' + msg.stage + '</span><br>' +
+                 '</li>');
         }
 
     </script>
